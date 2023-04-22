@@ -1,12 +1,18 @@
 ----------имена и фамилии богатырей----------
-const bogatiri = [
-  {id: 0, firstName: 'Ilya', lastName: 'Muromets', age: 58},
-  {id: 1, firstName: 'Alyosha', lastName: 'Popovich', age: 55},
-  {id: 2, firstName: 'Dobrinya', lastName: 'Nicitich', age: 53}
-];
+'use strict'
 
-const name = bogatiri.map(({firstName, lastName}) => ({firstName, lastName}))
-console.log(name)
+const bogatiri = [
+    {id: 0, firstName: 'Ilya', lastName:'Mutomets', age: 58},
+    {id: 1, firstName: 'Alyosha', lastName: 'Popovich', age: 55},
+    {id: 2, firstName: 'Dobrinya', lastName: 'Nicitich', age: 23}
+]
+
+const result = bogatiri
+.map(({firstName, lastName}) => ' Имя: ' + firstName + '.' + ' Фамилия: ' + lastName)
+.join(',')
+
+console.log(result)
+
 
 ----------элементы массива с возрастом больше 30----------
 const bogatiri = [
