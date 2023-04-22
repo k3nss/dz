@@ -1,3 +1,4 @@
+'use strict'
 const car = {
   name: 'Nissan',
   model: 'Skyline',
