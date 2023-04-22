@@ -54,3 +54,19 @@ const a = bogatiri.map((a) => ({
 }))
 
 console.log(a)
+
+------------------------------------
+'use strict'
+
+const bogatiri = [
+    {id: 0, firstName: 'Ilya', lastName:'Mutomets', age: 58},
+    {id: 1, firstName: 'Alyosha', lastName: 'Popovich', age: 55},
+    {id: 2, firstName: 'Dobrinya', lastName: 'Nicitich', age: 53}
+]
+
+
+const sum1 =bogatiri.reduce((sum, a) => {
+  return sum + a.age
+}, 0)
+
+console.log(sum1)
