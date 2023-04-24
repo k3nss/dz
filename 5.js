@@ -5,7 +5,7 @@ const obj = {
 }
 
 function getFullName(mileage){
-  return this.name + " " + this.model + " " + this.color + " " + mileage
+  return this.name + " " + this.model + " " + this.color + "." + " Пробег - " + mileage
 }
 
 getFullName.apply(obj, [14455])
