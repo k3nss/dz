@@ -2,7 +2,7 @@
 'use strict'
 
 const bogatiri = [
-    {id: 0, firstName: 'Ilya', lastName:'Mutomets', age: 58},
+    {id: 0, firstName: 'Ilya', lastName:'Muromets', age: 58},
     {id: 1, firstName: 'Alyosha', lastName: 'Popovich', age: 55},
     {id: 2, firstName: 'Dobrinya', lastName: 'Nicitich', age: 23}
 ]
