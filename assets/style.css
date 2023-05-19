@@ -1,0 +1,21 @@
+.gridBlock{
+    display: grid;
+    grid-template-areas: "A A A A B B" "C C C C C C" "D D D F F F";
+
+    gap: 5px;
+    background: lightgreen;
+    padding: 10px;
+
+    width: 500px;
+}
+
+.item{
+    background: yellow;
+    padding: 5px;
+}
+
+.box-1{grid-area: A;}
+.box-2{grid-area: B;}
+.box-3{grid-area: C;}
+.box-4{grid-area: D;}
+.box-5{grid-area: F;}
