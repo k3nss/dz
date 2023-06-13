@@ -1,52 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="stylesheet" href="./index.js">
 <link rel="stylesheet" href="./assets/style.css">
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Document</title>
+<title>web</title>
 </head>
 <body>
-<div class="container">
-<div droppable ='true' class="basket lightred"></div>
-<div droppable ='true' class="basket lightgreen"></div>
-</div>
-<div class="baskets">
-<div draggable="true" class="element green"></div>
-<div draggable="true" class="element green"></div>
-<div draggable="true" class="element green"></div>
-<div draggable="true" class="element green"></div>
-<div draggable="true" class="element green"></div>
-
-<div draggable="true" class="element red"></div>
-<div draggable="true" class="element red"></div>
-<div draggable="true" class="element red"></div>
-<div draggable="true" class="element red"></div>
-<div draggable="true" class="element red"></div>
-</div>
-<script>
-const drop = document.querySelectorAll('.basket')
-const drag = document.querySelectorAll('.element')
-let dragElement
-
-Array.from(drag).map((a)=>
-{a.addEventListener('dragstart', (e) =>{
-console.log('event')
-dragElement = e.target
-})})
-
-Array.from(drop).map((a)=>
-{a.addEventListener('dragover', (e) =>{
-e.preventDefault()
-})})
-
-Array.from(drop).map((a)=>
-{a.addEventListener('drop', (e) =>{
-console.log('event event')
-e.target.appendChild(dragElement)
-})})
-</script>
+<input class="input" type="text">
+<button class="btn1">button</button>
+<button class="btn2">button</button>
+<div class="block"></div>
 </body>
+<script>
+const block = document.querySelector('.block')
+const input = document.querySelector('.input')
+const btn1 = document.querySelector('.btn1')
+const btn2 = document.querySelector('.btn2')
+btn1.addEventListener('click', ()=>{
+const div = document.createElement('div')
+div.innerText = input.value
+block.insertBefore(div, block.children[0])
+})
+btn2.addEventListener('click', ()=>{
+const div = document.createElement('div')
+div.innerText = input.value
+block.appendChild(div)
+})
+</script>
 </html>
