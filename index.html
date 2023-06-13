@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+
+<body>
+<form class="formAdd" action="">
+<input required type="text">
+<input required type="number">
+<button>add</button>
+</form>
+<button class="open"> open </button>
+</body>
+<script>
+const formAdd = document.querySelector('.formAdd')
+formAdd.addEventListener('submit', (e) => {
+e.preventDefault()
+})
+
+const open = document.querySelector('.open')
+open.addEventListener('click', () => {
+idb()
+})
+
+function idb() {
+const indDB = indexedDB.open('data', 4)
+indDB.addEventListener('upgradeneeded', (event) => {
+const result = event.target.result
+result.createObjectStore('users', {
+autoIncrement: 'id'
+})
+})
+indDB.addEventListener('success', (event) => {
+const result = event.target.result
+const tx = result.transaction('users', 'readwrite')
+const users = tx.objectStore('users')
+users.add({
+name: formAdd[0].value,
+age: formAdd[1].value
+})
+})
+}
+</script>
+
+</html>
