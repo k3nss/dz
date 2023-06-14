@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="stylesheet" href="./index.js">
 <link rel="stylesheet" href="./assets/style.css">
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -43,10 +42,19 @@ e.preventDefault()
 })})
 
 Array.from(drop).map((a)=>
-{a.addEventListener('drop', (e) =>{
-console.log('event event')
-e.target.appendChild(dragElement)
-})})
+    {a.addEventListener('drop', (e) =>{
+        console.log('event event')
+
+        console.dir(dragElement)
+        console.dir(e.target)
+        if(((dragElement.classList.contains('red')) && (e.target.classList.contains('lightred')))
+            || ((dragElement.classList.contains('green')) && (e.target.classList.contains('lightgreen')))){
+            e.target.appendChild(dragElement)
+        }
+    })
+})
+
+
 
 </script>
 </body>
