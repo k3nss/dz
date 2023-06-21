@@ -1,0 +1,38 @@
+import http from 'http'
+import fs from 'fs'
+
+const server = http.createServer()
+
+server.listen(3000)
+
+
+const users = [
+  {
+    name: 'Ivan',
+    age: 10
+  },
+  {
+    name: 'Dinar',
+    age: 20
+  },
+]
+
+server.on('request', (req, res)=>{
+  if(req.method === 'GET' && req.url === '/user'){
+    res.write(JSON.stringify(users))
+    res.end()
+    return
+  }
+
+  const re = new RegExp('/user/[0-9]$')
+
+  if(req.method === 'GET' && re.exec(req.url)){
+    const arr = req.url.split('/')
+    res.write(JSON.stringify(users[arr[2]]))
+    res.end()
+    return
+  }
+  
+  res.writeHead(404)
+  res.end()
+})
