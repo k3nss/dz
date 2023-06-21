@@ -16,6 +16,12 @@
     btn.addEventListener('click', ()=>{
         navigator.geolocation.watchPosition((position) =>{
             console.log(position)
+            const {latitude, longitude} = position.coords
+            console.log(latitude, longitude)
+            const div = document.createElement('div')
+            div.innerText = `${latitude}, ${longitude}`
+            coords.appendChild(div)
         })})
+    
 </script>
 </html>
