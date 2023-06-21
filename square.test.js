@@ -1,5 +1,5 @@
-const a = require('./index.js')
+const calc = require('./index.js')
 
 test('ToBeGreaterThan', () => {
-  expect(s).toBeGreaterThan(2)
+  expect(calc(2,'+',4)).toBeGreaterThan(2)
 })
